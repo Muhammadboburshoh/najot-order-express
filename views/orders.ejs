@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order</title>
+</head>
+<body>
+
+  <form method="POST">
+    <input type="text" name="fullname" placeholder="Fullname">
+    <input type="tel" name="tel" placeholder="Phone Nomber">
+    <input type="number" name="age" placeholder="Age">
+
+    <input type="text" name="courseId" list="courses" autocomplete="off">
+
+    <datalist id="courses">
+      <% for (let course of courses) { %>
+        <option value="<%=course.id%>"><%=course.name%></option>
+      <% } %>
+    </datalist>
+
+    <button>send</button>
+  </form>
+
+</body>
+</html>
