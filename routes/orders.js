@@ -26,6 +26,7 @@ router.post('/', async function(req, res, next) {
 
   try {
     const newOrder = await rows(creaetOrder, fullname, tel, age, courseId)
+    req.session.newOrder = newOrder
 
     res.redirect('/')
   }

@@ -6,7 +6,15 @@ router.get('/', function(req, res, next) {
 
   req.session.views = (req.session.views ||0) + 1
 
-  res.render('index', { title: 'Express', views: req.session.views});
+  const newOrder = req.session.newOrder
+
+  req.session.newOrder = null
+
+  res.render('index', {
+    title: 'Express',
+    views: req.session.views,
+    newOrder: newOrder
+  });
 });
 
 module.exports = router;

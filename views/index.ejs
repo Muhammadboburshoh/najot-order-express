@@ -15,5 +15,12 @@
       </ul>
     </nav>
     <p>Welcome to <%= title %></p>
+
+    <% if (newOrder) {%>
+    <pre>
+      <%= JSON.stringify(newOrder)%>
+    </pre>
+
+    <%}%>
   </body>
 </html>
